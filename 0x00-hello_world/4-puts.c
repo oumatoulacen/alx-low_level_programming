@@ -1,11 +1,11 @@
 #include <stdio.h>
  /**
  *main - this is the main Function
- *Retuen: always return 0
+ *Retuen: always 0
  */
 
-int main(
+int main()
 {
-	puts("\"Programming is like building a multilingual puzzle");
-	return (0);
+puts("\"Programming is like building a multilingual puzzle");
+return (0);
 }
