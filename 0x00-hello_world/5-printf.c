@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+/**
+ * puts instead of printf
+ */
 
 int main(void)
 {
