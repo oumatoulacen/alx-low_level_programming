@@ -1,9 +1,8 @@
 #include<stdio.h>
-        /* here we use puts instead printf*/
 
 int main(void)
 {
-	/* here we use puts instead printf*/
-	puts("\"Programming is like building a multilingual puzzle");
-	return (0);
+/* here we use puts instead printf*/
+puts("\"Programming is like building a multilingual puzzle");
+return (0);
 }
