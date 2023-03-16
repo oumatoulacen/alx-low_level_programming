@@ -1,6 +1,6 @@
 #include <stdio.h>
  /**
- *main - this is the main Function
+ *main - this is the main function
  *Retuen: always 0
  */
 
