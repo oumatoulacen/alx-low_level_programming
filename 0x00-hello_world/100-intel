@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S $1
+gcc -S -masm=intel $CFILE | mv ${CFILE%.*}.s ${CFILE%.*}.s
