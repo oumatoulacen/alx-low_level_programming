@@ -9,15 +9,18 @@
 int main(void)
 {
 	int d = 0;
-	int c = 9;
 
-	while (d < 9)
+	while (d <= 9)
 	{
 	putchar(d + '0');
+	if (d == 9)
+	{
+	continue;
+	}
 	putchar(',');
 	putchar(' ');
 	d++;
 	}
-	putchar(c + '0\n');
+	putchar('\n');
 	return (0);
 }
