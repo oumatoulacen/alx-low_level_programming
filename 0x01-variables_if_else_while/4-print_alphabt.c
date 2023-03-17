@@ -12,9 +12,10 @@ int main(void)
 
 	while (c <= 'a')
 	{
-	if (c != 'q' || c != 'e')
-	{
 	putchar(c);
+	if (c == 'q' || c == 'e')
+	{
+	continue;
 	}
 	c++;
 	}
