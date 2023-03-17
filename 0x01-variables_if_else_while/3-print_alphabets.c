@@ -9,12 +9,13 @@
 int main(void)
 {
 	char l = 'a';
-	char *n = '\n';
+	char L = l + 26;
 
 	while (l <= 'Z')
 	{
 	putchar(l);
-	putchar(n);
+	putchar(L);
+	putchar("\n");
 	l++;
 	}
 	return (0);
