@@ -10,9 +10,10 @@ int main(void)
 {
 	int l = 'a';
 
-	while (l <= "Z")
+	while (l <= 'Z')
 	{
 		printf(l);
+		l++;
 	return (0);
 	}
 }
