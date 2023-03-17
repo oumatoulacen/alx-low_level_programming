@@ -9,14 +9,15 @@
 int main(void)
 {
 	char l = 'a';
-	char L = l + 26;
 
 	while (l <= 'z')
 	{
+	char L = l + 26;
+
 	putchar(l);
 	putchar(L);
-	putchar('\n');
-	l++;
+`	l++;
 	}
+	putchar('\n');
 	return (0);
 }
