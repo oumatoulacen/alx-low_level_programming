@@ -8,11 +8,13 @@
 
 int main(void)
 {
-	int l = 'a';
+	char l = 'a';
+	char *n = '\n';
 
 	while (l <= 'Z')
 	{
-	printf("%c\n", l);
+	putchar(l);
+	putchar(n);
 	l++;
 	}
 	return (0);
