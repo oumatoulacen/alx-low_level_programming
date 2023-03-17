@@ -12,8 +12,8 @@ int main(void)
 
 	while (l <= 'Z')
 	{
-		printf("%c\n",l);
-		l++;
-	return (0);
+	printf("%c\n", l);
+	l++;
 	}
+	return (0);
 }
