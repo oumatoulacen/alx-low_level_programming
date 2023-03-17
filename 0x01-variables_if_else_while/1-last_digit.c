@@ -20,7 +20,7 @@ int main(void)
 	}
 	else if (last_digit == 0)
 	{
-	printf("0\n");
+	printf("0 and is 0\n");
 	}
 	else
 	{
