@@ -15,11 +15,6 @@ int main(void)
 		{
 			if (i == j)
 				continue;
-			if (i < 10)
-			{
-				putchar('0' + i / 10);
-				putchar('0' + i % 10);
-			}
 			else
 			{
 				putchar('0' + i / 10);
