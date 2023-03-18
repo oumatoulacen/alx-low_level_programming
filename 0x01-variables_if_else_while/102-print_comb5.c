@@ -13,23 +13,19 @@ int main(void)
 	{
 		for (j = i; j < 100; j++)
 		{
-			if (i == j)
-				continue;
-			else
+			putchar(i / 10 + '0');
+			putchar(i % 10 + '0');
+			putchar(' ');
+			putchar(j / 10 + '0');
+			putchar(j % 10 + '0');
+			if (!(i == 99 && j == 99))
 			{
-				putchar('0' + i / 10);
-				putchar('0' + i % 10);
-				putchar(' ');
-				if (j < 10)
-				{
-					putchar('0' + j / 10);
-					putchar('0' + j % 10);
-				}
 				putchar(',');
 				putchar(' ');
 			}
 		}
 	}
-		putchar('\n');
-		return (0);
+	putchar('\n');
+	return (0);
 }
+
