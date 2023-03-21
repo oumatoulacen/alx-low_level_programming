@@ -1,15 +1,18 @@
 #include "main.c"
 
 /**
- * print_alphabit - print alphabits
+ * print_alphabet - print alphabets
  *
  * Return: Always 0.
  */
 
+void print_alphabet(void)
+{
 	char a;
 
 	for (a = 'a'; a <= 'z'; a++)
-	{	
-	print_alphabet(a);
+	{
+	_putchar(a);
 	}
-	print_alphabet('\n');
+	_putchar('\n');
+}
