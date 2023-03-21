@@ -15,4 +15,5 @@ int print_last_digit(int c)
 		j = -j;
 	}
 	_putchar(j + 48);
+	return (j);
 }
