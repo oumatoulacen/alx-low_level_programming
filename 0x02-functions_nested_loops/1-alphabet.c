@@ -1,12 +1,11 @@
 #include "main.c"
 
 /**
- * main - check the code
+ * print_alphabit - print alphabits
  *
  * Return: Always 0.
  */
-int main(void)
-{
+
 	char a;
 
 	for (a = 'a'; a <= 'z'; a++)
@@ -14,5 +13,3 @@ int main(void)
 	print_alphabet(a);
 	}
 	print_alphabet('\n');
-	return (0);
-}
