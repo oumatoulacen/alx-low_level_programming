@@ -6,7 +6,7 @@
  * Return: Always 0.
  */
 
-int _islower(char c)
+int _islower(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (0);
