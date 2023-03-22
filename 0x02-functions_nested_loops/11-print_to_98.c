@@ -29,12 +29,12 @@ void print_to_98(int n)
 
 		for (j = n; j >= 98; j--)
 		{
-			if (i != 98)
+			if (j != 98)
 			{
-				printf("%d, ", i);
+				printf("%d, ", j);
 			}
 			else
-				printf("%d\n", i);
+				printf("%d\n", j);
 		}
 	}
 	else
