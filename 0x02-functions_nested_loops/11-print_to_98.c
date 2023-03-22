@@ -21,9 +21,9 @@ void print_to_98(int n)
 	{
 		int j;
 
-		for (i = n; i >= 98; i++)
+		for (j = n; j >= 98; j++)
 		{
-			_putchar(i);
+			_putchar(j);
 		}
 	else
 		_putchar(n);
