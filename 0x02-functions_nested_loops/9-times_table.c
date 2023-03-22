@@ -21,8 +21,12 @@ void times_table(void)
 			{
 				_putchar(' ');
 			}
-		_putchar(value / 10 + '0');
+			else
+			{
+				_putchar(value / 10 + '0');
+			}
 		_putchar(value % 10 + '0');
+		_putchar(',');
 		_putchar(' ');
 		}
 		_putchar('$');
