@@ -8,7 +8,6 @@
 void greater(int n)
 {
 	int i;
-	int c;
 	int b;
 	int d;
 
