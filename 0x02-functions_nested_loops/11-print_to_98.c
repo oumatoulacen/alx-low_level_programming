@@ -14,19 +14,28 @@ void print_to_98(int n)
 
 		for (i = n; i >= 98; i--)
 		{
-			_putchar(i);
+			if (i >= 100)
+			{
+				_putchar(i / 100);
+				_putchar(((i % 100) / 10) + '0');
+				_putchar(((i % 100) % 10) + '0');
+			}
+			else
+			{
+				_putchar(((i % 100) / 10) + '0');
+				_putchar(((i % 100) % 10) + '0');
+			}
 		}
 	}
-	else if (n < 98)
+	else if (n <= 98)
 	{
 		int j;
 
 		for (j = n; j >= 98; j++)
 		{
-			_putchar(j);
+			_putchar((j / 10) + '0');
+			_putchar((j % 10) + '0');
 		}
 	}
-	else
-		_putchar(n);
 
 }
