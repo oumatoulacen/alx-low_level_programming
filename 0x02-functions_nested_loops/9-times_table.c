@@ -26,11 +26,12 @@ void times_table(void)
 				_putchar(value / 10 + '0');
 			}
 		_putchar(value % 10 + '0');
+		if (j != 9)
+		{
 		_putchar(',');
 		_putchar(' ');
 		}
-		_putchar('$');
-		_putchar('\n');
+		}
 	}
 
 }
