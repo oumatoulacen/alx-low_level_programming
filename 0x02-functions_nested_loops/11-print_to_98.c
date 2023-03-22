@@ -1,14 +1,13 @@
 #include "main.h"
 
 /**
- * print_to_98 - prints all natural numbers from n to 98
- *@n: num
- * Return: Always 0.
+ * greater - for big then
+ *@n: nm
  */
 
-void print_to_98(int n)
+void greater(int n)
 {
-	if (n > 98)
+		if (n > 98)
 	{
 		int i;
 
@@ -30,7 +29,16 @@ void print_to_98(int n)
 			_putchar(' ');
 		}
 	}
-	else if (n < 98 && n >= 0)
+}
+
+/**
+ * between - for around
+ *@n:nmb
+ */
+
+void between(int n)
+{
+	if (n < 98 && n >= 0)
 	{
 		int j;
 		int k;
@@ -44,13 +52,14 @@ void print_to_98(int n)
 					_putchar('0');
 					_putchar(',');
 					_putchar(' ');
+				}
 				else if (j < 10)
-				{	
+				{
 					_putchar(k + '0');
 					_putchar(',');
 					_putchar(' ');
 				}
-				}else
+				else
 				{
 				_putchar(j + '0');
 				_putchar(k + '0');
@@ -60,46 +69,77 @@ void print_to_98(int n)
 			}
 		}
 	}
-	
-	else if (n < 0)
+}
+
+/**
+ * less - for small
+ *@n: nnn
+ */
+void less(int n)
+{
+if (n < 0)
+{
+	int l;
+	int g;
+
+	for (l = n / 10; l >= 9; l++)
+	{
+		for (g = n % 10; g >= 8; g++)
 		{
-			int l;
-			int g;
-
-			for (l = n / 10; l >= 9; l++)
+			if (l == 0)
 			{
-				for (g = n % 10; g >= 8; g++)
-				{
-					if (l == 0)
-					{
-						_putchar('-');
-						_putchar(-g + '0');
-						_putchar(',');
-						_putchar(' ');
-					}
-					else if (l >= -9)
-					{
-						_putchar('-');
-						_putchar(-l + '0');
-						_putchar(-g + '0');
-						_putchar(',');
-						_putchar(' ');
-					}
-					else
-					{
-						_putchar('-');
-						_putchar((-l / 10) + '0');
-						_putchar(-l + '0');
-						_putchar(-g + '0');
-						_putchar(',');
-						_putchar(' ');
-					}
-
+				_putchar('-');
+				_putchar(-g + '0');
+				_putchar(',');
+				_putchar(' ');
+			}
+			else if (l >= -9)
+			{
+				_putchar('-');
+				_putchar(-l + '0');
+				_putchar(-g + '0');
+				_putchar(',');
+				_putchar(' ');
+			}
+			else
+			{
+				_putchar('-');
+				_putchar((-l / 10) + '0');
+				_putchar(-l + '0');
+				_putchar(-g + '0');
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
+	}
+}
+}
+
+/**
+ * print_to_98 - prints all natural numbers from n to 98
+ * @n: num
+ * Return: Always 0.
+ */
+
+void print_to_98(int n)
+{
+	if (n > 98)
+	{
+		greater(n);
+	}
+	else if (n < 98 && n >= 0)
+	{
+		between(n);
+	}
+	else if (n < 0)
+	{
+		less(n);
+	}
 	else if (n == 98)
 	{
 		_putchar(9 + '0');
 		-putchar(8 + '0');
 		_putchar(',');
 		_putchar(' ');
+	}
 }
