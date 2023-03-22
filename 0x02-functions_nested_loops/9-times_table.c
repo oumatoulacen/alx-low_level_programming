@@ -21,12 +21,12 @@ void times_table(void)
 			{
 				_putchar(' ');
 			}
-		putchar(value / 10 + '0');
-		putchar(value % 10 + '0');
-		putchar(' ');
+		_putchar(value / 10 + '0');
+		_putchar(value % 10 + '0');
+		_putchar(' ');
 		}
-		putchar('$');
-		putchar('\n');
+		_putchar('$');
+		_putchar('\n');
 	}
 
 }
