@@ -14,9 +14,9 @@ void greater(int n)
 
 	for (i = n / 100 ; i > 0 ; i--)
 	{
-		for (b = c / 10; b >= 9; b--)
+		for (b = n / 10; b >= 9; b--)
 		{
-			for (d = c % 10; d > 8; d++)
+			for (d = n % 10; d > 8; d++)
 				{
 				_putchar(i / 100 + '0');
 				_putchar(((i % 100) / 10) + '0');
