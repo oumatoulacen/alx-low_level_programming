@@ -7,28 +7,26 @@
 
 void greater(int n)
 {
-		if (n > 98)
+	int i;
+	int c;
+	int b;
+	int d;
+
+	for (i = n / 100 ; i > 0 ; i--)
 	{
-		int i;
-
-		for (i = n; i > 98 ; i--)
+		for (b = c / 10; b >= 9; b--)
 		{
-			if (i >= 100)
-			{
-
+			for (d = c % 10; d > 8; d++)
+				{
 				_putchar(i / 100 + '0');
 				_putchar(((i % 100) / 10) + '0');
 				_putchar(((i % 100) % 10) + '0');
-			}
-			else
-			{
-				_putchar(((i % 100) / 10) + '0');
-				_putchar(((i % 100) % 10) + '0');
-			}
-			_putchar(',');
-			_putchar(' ');
+				_putchar(',');
+				_putchar(' ');
+				}
 		}
 	}
+
 }
 
 /**
@@ -50,8 +48,8 @@ void between(int n)
 				if (j == 0)
 				{
 					_putchar('0');
-					_putchar(',');
 					_putchar(' ');
+					_putchar('\n');
 				}
 				else if (j < 10)
 				{
@@ -76,8 +74,7 @@ void between(int n)
  *@n: nnn
  */
 void less(int n)
-{
-if (n < 0)
+
 {
 	int l;
 	int g;
@@ -113,7 +110,6 @@ if (n < 0)
 		}
 	}
 }
-}
 
 /**
  * print_to_98 - prints all natural numbers from n to 98
@@ -139,7 +135,7 @@ void print_to_98(int n)
 	{
 		_putchar(9 + '0');
 		_putchar(8 + '0');
-		_putchar(',');
 		_putchar(' ');
+		_putchar('\n');
 	}
 }
