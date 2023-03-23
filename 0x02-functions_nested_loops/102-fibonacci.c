@@ -14,8 +14,8 @@ int main(void)
 
 	for (i = 0; i <= 49; i++)
 	{
-		result += 1;
-		printf("%d", result);
+		result = 2 * result + i;
+		printf("%d, ", result);
 	}
 	printf("\n");
 	return (0);
