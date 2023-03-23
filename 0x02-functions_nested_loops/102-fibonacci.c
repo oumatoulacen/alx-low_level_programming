@@ -11,7 +11,7 @@ int main(void)
 {
 
 	int a = 1, b = 2;
-	unsigned long fib[50] = {0};
+	unsigned fib[50] = {0};
 	int i;
 	int j;
 
@@ -26,11 +26,11 @@ int main(void)
 		a = b;
 		b = c;
 	}
-	printf("%lu", fib[0]);
+	printf("%u", fib[0]);
 
 	for (j = 1; j < 50; j++)
 	{
-		printf(", %lu", fib[j]);
+		printf(", %u", fib[j]);
 	}
 	printf("\n");
 	return (0);
