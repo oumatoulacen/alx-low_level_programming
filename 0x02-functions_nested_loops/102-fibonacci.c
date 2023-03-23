@@ -11,7 +11,6 @@ int main(void)
 {
 	int i;
 	int result = 0;
-	int c;
 
 	for (i = 0; i <= 49; i++)
 	{
