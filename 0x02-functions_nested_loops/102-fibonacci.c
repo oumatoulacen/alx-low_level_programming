@@ -9,21 +9,20 @@
 
 int main(void)
 {
-	int a = 1;
-	int c = 2;
-	int fib[50] = {a, c};
-	int i;
-	int b;
 
-	for (i = 1; i <= 49; i++)
+	int a = 1, b = 2;
+	int fib[50] = {a, b};
+
+	for (int i = 2; i < 50; i++)
 	{
-		b = a + c;
-		fib[i] = b;
-		a = c;
-		c = b;
+		int c = a + b;
+
+		fib[i] = c;
+		a = b;
+		b = c;
 	}
 	printf("%d", fib[0]);
-	for (i = 1; i <= 49; i++)
+	for (int i = 1; i < 50; i++)
 	{
 		printf(", %d", fib[i]);
 	}
