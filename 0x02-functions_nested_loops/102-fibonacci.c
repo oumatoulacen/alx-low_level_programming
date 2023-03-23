@@ -14,8 +14,8 @@ int main(void)
 
 	for (i = 0; i <= 49; i++)
 	{
-		result += i + 1;
 		printf("%d\n", result);
+		result += i;
 	}
 	return (0);
 }
