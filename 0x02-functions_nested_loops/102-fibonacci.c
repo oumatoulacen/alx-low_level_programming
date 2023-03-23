@@ -12,10 +12,11 @@ int main(void)
 
 	int a = 1, b = 2;
 	int fib[50] = {0};
+	int i;
+	int j;
 
 	fib[0] = a;
 	fib[1] = b;
-	int i;
 
 	for (i = 2; i < 50; i++)
 	{
@@ -26,7 +27,6 @@ int main(void)
 		b = c;
 	}
 	printf("%d", fib[0]);
-	int j;
 
 	for (j = 1; j < 50; j++)
 	{
