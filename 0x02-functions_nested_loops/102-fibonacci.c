@@ -15,7 +15,7 @@ int main(void)
 
 	for (i = 0; i <= 49; i++)
 	{
-		c = c + i + 1
+		c = c + i + 1;
 		result = result + i;
 		printf("%d, ", result + c);
 	}
