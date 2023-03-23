@@ -26,11 +26,11 @@ int main(void)
 		a = b;
 		b = c;
 	}
-	printf("%d", (unsigned) fib[0]);
+	printf("%d", (unsigned int) fib[0]);
 
 	for (j = 1; j < 50; j++)
 	{
-		printf(", %d", (unsigned) fib[j]);
+		printf(", %d", (unsigned int) fib[j]);
 	}
 	printf("\n");
 	return (0);
