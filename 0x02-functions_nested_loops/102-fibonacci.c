@@ -11,9 +11,13 @@ int main(void)
 {
 
 	int a = 1, b = 2;
-	int fib[50] = {a, b};
+	int fib[50] = {0};
 
-	for (int i = 2; i < 50; i++)
+	fib[0] = a;
+	fib[1] = b;
+	int i;
+
+	for (i = 2; i < 50; i++)
 	{
 		int c = a + b;
 
@@ -22,9 +26,11 @@ int main(void)
 		b = c;
 	}
 	printf("%d", fib[0]);
-	for (int i = 1; i < 50; i++)
+	int j;
+
+	for (j = 1; j < 50; j++)
 	{
-		printf(", %d", fib[i]);
+		printf(", %d", fib[j]);
 	}
 	printf("\n");
 	return (0);
