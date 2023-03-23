@@ -11,7 +11,7 @@ int main(void)
 {
 	int a = 1;
 	int c = 2;
-	int fib[50] = {a, b};
+	int fib[50] = {a, c};
 	int i;
 
 	for (i = 1; i <= 49; i++)
