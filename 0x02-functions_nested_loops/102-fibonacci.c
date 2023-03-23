@@ -13,11 +13,11 @@ int main(void)
 	int c = 2;
 	int fib[50] = {a, c};
 	int i;
+	int b;
 
 	for (i = 1; i <= 49; i++)
 	{
-		int b = a + c;
-
+		b = a + c;
 		fib[i] = b;
 		a = c;
 		c = b;
