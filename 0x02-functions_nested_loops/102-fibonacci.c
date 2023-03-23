@@ -11,7 +11,7 @@ int main(void)
 {
 
 	int a = 1, b = 2;
-	long long int fib[50] = {0};
+	long int fib[50] = {0};
 	int i;
 	int j;
 
@@ -26,11 +26,11 @@ int main(void)
 		a = b;
 		b = c;
 	}
-	printf("%lli", fib[0]);
+	printf("%li", fib[0]);
 
 	for (j = 1; j < 50; j++)
 	{
-		printf(", %lli", fib[j]);
+		printf(", %li", fib[j]);
 	}
 	printf("\n");
 	return (0);
