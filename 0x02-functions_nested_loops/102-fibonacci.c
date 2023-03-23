@@ -11,7 +11,7 @@ int main(void)
 {
 
 	int a = 1, b = 2;
-	int fib[50] = {0};
+	long int fib[50] = {0};
 	int i;
 	int j;
 
