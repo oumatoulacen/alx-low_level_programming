@@ -26,11 +26,11 @@ int main(void)
 		a = b;
 		b = c;
 	}
-	printf("%llu", fib[0]);
+	printf("%lu", fib[0]);
 
 	for (j = 1; j < 50; j++)
 	{
-		printf(", %llu", fib[j]);
+		printf(", %lu", fib[j]);
 	}
 	printf("\n");
 	return (0);
