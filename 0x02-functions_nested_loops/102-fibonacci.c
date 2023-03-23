@@ -11,11 +11,13 @@ int main(void)
 {
 	int i;
 	int result = 0;
+	int c = 0;
 
 	for (i = 0; i <= 49; i++)
 	{
-		result = 2 * result + i;
-		printf("%d, ", result);
+		c = c + i + 1
+		result = result + i;
+		printf("%d, ", result + c);
 	}
 	printf("\n");
 	return (0);
