@@ -1,6 +1,7 @@
 #include "main.h"
 /**
 * positive_or_negative - positive or negative
+* @n: num
 * Return: Always 0 (Success)
 **/
 
