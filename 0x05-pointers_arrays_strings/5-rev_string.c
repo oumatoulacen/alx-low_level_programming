@@ -19,6 +19,18 @@ void rev_string(char *s)
 		lng++;
 		i++;
 	}
+	if (lng % 2 == 0)
+	{
+	for (k = 0; k <= (lng + 2) / 2; k++)
+	{
+		str = s[lng - 1];
+		s[lng - 1] = s[k];
+		s[k] = str;
+		lng--;
+	}
+	}
+	else
+	{
 	for (k = 0; k <= (lng + 3) / 2; k++)
 	{
 		str = s[lng - 1];
@@ -26,4 +38,6 @@ void rev_string(char *s)
 		s[k] = str;
 		lng--;
 	}
+	}
+
 }
