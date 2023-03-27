@@ -31,7 +31,7 @@ void rev_string(char *s)
 	}
 	else
 	{
-	for (k = 0; k <= (lng + 3) / 2; k++)
+	for (k = 0; k <= (lng + 1) / 2; k++)
 	{
 		str = s[lng - 1];
 		s[lng - 1] = s[k];
