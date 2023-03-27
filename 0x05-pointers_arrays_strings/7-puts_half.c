@@ -9,12 +9,11 @@
 void puts_half(char *str)
 {
 	int i = 0;
-	char str;
 	int lng;
 	int k;
 
 	lng = 0;
-	while (s[i])
+	while (str[i])
 	{
 		lng++;
 		i++;
@@ -33,4 +32,5 @@ void puts_half(char *str)
 			_putchar(str[k]);
 		}
 	}
+	_putchar('\n');
 }
