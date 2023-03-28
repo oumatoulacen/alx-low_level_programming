@@ -2,7 +2,7 @@
 
 /**
  * _atoi - convert a string to an integer
- * @s ; str
+ * @s: str
  * Return: 0 if no number found and number otherwise
  */
 
