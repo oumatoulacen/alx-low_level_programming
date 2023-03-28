@@ -18,18 +18,18 @@ void puts_half(char *str)
 		lng++;
 		i++;
 	}
-	if (lng % 2 != 1)
+	if (lng % 2)
 	{
-	for (k = (lng + 1) / 2; k < lng; k++)
+	for (k = lng / 2; k < lng; k++)
 	{
-		_putchar(str[k]);
+		_putchar(str[k + 1]);
 	}
 	}
 	else
 	{
-		for (k = lng / 2; k < lng; k++)
+		for (k = (lng - 1) / 2; k < lng; k++)
 		{
-			_putchar(str[k]);
+			_putchar(str[k + 1]);
 		}
 	}
 	_putchar('\n');
