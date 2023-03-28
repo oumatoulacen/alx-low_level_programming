@@ -22,7 +22,7 @@ void puts_half(char *str)
 	{
 	for (k = lng / 2; k < lng; k++)
 	{
-		if (str[k])
+		if (str[k + 1])
 			_putchar(str[k + 1]);
 	}
 	}
@@ -30,7 +30,7 @@ void puts_half(char *str)
 	{
 		for (k = (lng - 1) / 2; k < lng; k++)
 		{
-			if (str[k])
+			if (str[k + 1])
 				_putchar(str[k + 1]);
 		}
 	}
