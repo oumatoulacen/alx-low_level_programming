@@ -2,7 +2,7 @@
 
 /**
  * print_number - capitalizes all words of a string.
- * @str: num
+ * @n: num
  * Return: void
  */
 
