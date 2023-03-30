@@ -17,7 +17,7 @@ char *cap_string(char *str)
 	{
 		for (j = 0; j <= 9; j++)
 		{
-			if (str[i] == sp[j] || str[i] == '"'|| str[i] == '\n' || str[i] == '\t')
+			if (str[i] == sp[j] || str[i] == '"' || str[i] == '\n' || str[i] == '\t')
 			{
 				if (str[i] == '\t')
 					str[i] = ' ';
