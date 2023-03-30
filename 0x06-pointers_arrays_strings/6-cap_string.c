@@ -25,6 +25,8 @@ char *cap_string(char *str)
 				}
 			}
 		}
+		if (*str == '\n')
+			str[i] == ' ';
 		i++;
 	}
 	return (str);
