@@ -17,7 +17,8 @@ char *cap_string(char *str)
 	{
 		for (j = 0; j <= 9; j++)
 		{
-			if (str[i] == sp[j] || i == 0 || str[i] == '\n' || str[i] == '\t' || str[i] == '"')
+			if (str[i] == sp[j] || i == 0
+			|| str[i] == '\n' || str[i] == '\t' || str[i] == '"')
 			{
 				if (str[i + 1] <= 122 && str[i + 1] >= 97)
 				{
