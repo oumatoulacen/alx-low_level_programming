@@ -5,7 +5,6 @@ int check(int n, int i);
 /**
  * is_prime_number - test input integer
  * @n: integer
- * @i: iter
  * Return: 1 if the input integer is a prime number, otherwise return 0
  */
 
@@ -13,7 +12,7 @@ int is_prime_number(int n)
 {
 	if (n <= 1)
 	{
-		 return (1);
+		return (0);
 	}
 	return (check(n, n - 1));
 }
@@ -21,7 +20,7 @@ int is_prime_number(int n)
 /**
  * check - test input integer
  * @n: int
- * @i: iter
+ * @i: itr
  * Return: 0 if not prime
  */
 
