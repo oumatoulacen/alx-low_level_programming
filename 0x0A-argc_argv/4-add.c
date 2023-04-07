@@ -15,11 +15,11 @@ int main(__attribute__((unused)) int argc, char **argv)
 
 	for (i = 0; i < argc; i++)
 	{
-		if (atoi(argv[i]) >= 0)
+		if (atoi(argv[i]) >= 0 && isdigit(atoi(argv[i]))
 		{
 			res += atoi(argv[i]);
 		}
-		else
+		else if (isalpha(argv[i])
 			printf("Error\n");
 
 	}
