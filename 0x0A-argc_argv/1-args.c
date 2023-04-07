@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "main.h"
+#include <stdio.h>
 
 /**
  * main - check the code
@@ -8,12 +8,8 @@
  * Return: always 0
  */
 
-void main(argc, argv)
+int main(int argc, __attribute__((unused)) char **argv)
 {
-	int num = 0;
-	while (argv[i])
-		num++;
-	_putchar(num + 48);
-	_putchar('\0');
+	printf("%d\n", argc);
 	return (0);
 }
