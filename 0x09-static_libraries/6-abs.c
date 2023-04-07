@@ -2,15 +2,15 @@
 
 /**
  * _abs - computes the absolute value of an integer.
- *@d: the integer
+ *@n: the integer
  * Return: Always 0.
  */
-int _abs(int d)
+int _abs(int n)
 {
-	if (d < 0)
-		return (-d);
-	if (d > 0)
-		return (d);
+	if (n < 0)
+		return (-n);
+	if (n > 0)
+		return (n);
 	else
 		return (0);
 }
