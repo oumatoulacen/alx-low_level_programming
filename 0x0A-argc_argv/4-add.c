@@ -19,6 +19,8 @@ int main(__attribute__((unused)) int argc, char **argv)
 		{
 			res += atoi(argv[i]);
 		}
+		else
+			printf("Error\n");
 
 	}
 	printf("%d\n", res);
