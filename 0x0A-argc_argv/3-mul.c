@@ -14,6 +14,6 @@ int main(__attribute__((unused)) int argc, char **argv)
 	if (argc == 3)
 		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 	else
-		printf("Error");
+		printf("Error\n");
 	return (0);
 }
