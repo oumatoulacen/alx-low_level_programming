@@ -18,20 +18,15 @@ int main(__attribute__((unused)) int argc, char **argv)
 	{
 		printf("%d\n", 0);
 		return (1);
-	}else
-	{
+	}
 	for (i = 1; i < argc; i++)
 	{
 		if (atoi(argv[i]))
 		{
 			res = res + atoi(argv[i]);
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
-	}
+		printf("Error\n");
+		return (1);
 	}
 	printf("%d\n", res);
 	return (0);
