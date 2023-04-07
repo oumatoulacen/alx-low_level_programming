@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 
 /**
@@ -13,15 +14,24 @@ int main(__attribute__((unused)) int argc, char **argv)
 {
 	int i, res = 0;
 
-	for (i = 0; i < argc; i++)
+	if (argc == 1)
 	{
-		if (atoi(argv[i]) >= 0 && isdigit(atoi(argv[i]))
+		printf("%d\n", 0);
+		return (1);
+	}else
+	{
+	for (i = 1; i < argc; i++)
+	{
+		if (atoi(argv[i]))
 		{
-			res += atoi(argv[i]);
+			res = res + atoi(argv[i]);
 		}
-		else if (isalpha(argv[i])
+		else
+		{
 			printf("Error\n");
-
+			return (1);
+		}
+	}
 	}
 	printf("%d\n", res);
 	return (0);
