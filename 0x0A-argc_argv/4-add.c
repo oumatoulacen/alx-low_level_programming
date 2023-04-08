@@ -28,8 +28,8 @@ int main(__attribute__((unused)) int argc, char **argv)
 				printf("Error\n");
 				return (1);
 			}
-			res += atoi(argv[i]);
 		}
+		res = res + atoi(argv[i]);
 	}
 	printf("%d\n", res);
 	return (0);
