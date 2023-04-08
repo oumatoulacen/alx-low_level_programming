@@ -12,21 +12,24 @@
 
 int main(__attribute__((unused)) int argc, char **argv)
 {
-	int i, res = 0;
+	int i, j, res = 0;
 
 	if (argc == 1)
 	{
 		printf("%d\n", 0);
-		return (1);
+		return (0);
 	}
 	for (i = 1; i < argc; i++)
 	{
-		if (atoi(argv[i]))
+		for (j = 0; argv[i][j]; j++)
 		{
-			res = res + atoi(argv[i]);
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			res += atoi(argv[i]);
 		}
-		printf("Error\n");
-		return (1);
 	}
 	printf("%d\n", res);
 	return (0);
