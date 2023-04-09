@@ -5,6 +5,7 @@
  * @s: str
  * Return: int
  */
+int len(char *s);
 int test(char *s);
 
 int is_palindrome(char *s)
@@ -15,17 +16,18 @@ int is_palindrome(char *s)
 }
 
 
+int len(char *s)
+{
+	if (*s != '\0')
+		return 1 + len(s++);
+}
+
 int test(char *s)
 {
-	int i = 0, j;
+	int i = 0;
+	int lg = len(s);
 
-	while (s[i] != '\0')
-		i++;
-	for(j = 0; j < i; j++)
-	{
-		i--;
-		if (s[i] != s[j])
-			return (0);
-	}
-	return (1);
+	if (s[i] != s[lg - 1])
+		return (0);
+	test(s++);
 }
