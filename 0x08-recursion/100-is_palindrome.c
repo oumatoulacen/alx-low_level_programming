@@ -15,11 +15,16 @@ int is_palindrome(char *s)
 
 	if (*s == '\0')
 		return (1);
-	else if (test(s , 0, x))
+	else if (test(s, 0, x))
 		return (1);
 	return (0);
 }
 
+/**
+ * len - length
+ * @s: str
+ * Return: int
+ */
 
 int len(char *s)
 {
@@ -27,6 +32,15 @@ int len(char *s)
 		return (1 + len(s + 1));
 	return (0);
 }
+
+/**
+ * test - if its polindrome
+ * @s: str
+ * @i: inc s
+ * @x: denc length
+ * Return: int
+ */
+
 
 int test(char *s, int i, int x)
 {
