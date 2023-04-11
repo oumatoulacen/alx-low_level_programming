@@ -23,6 +23,10 @@ char *str_concat(char *s1, char *s2)
 		j++;
 	ptr = malloc(sizeof(char) * (i + j + 1));
 
+	if (s1 == NULL)
+		return (s2);
+	if(s2 == NULL)
+		return (s1);
 	if (ptr != NULL)
 	{
 		for (k = 0; k < i; k++)
