@@ -2,6 +2,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX_WORD_LENGTH 100
+
+/**
+ * get_word_count - sgmnts
+ * @str: string
+ * Return: num of sgmts
+ */
+
+int get_word_count(char *str)
+{
+	int count = 0;
+	char last = ' ';
+	
+	while (*str != '\0')
+	{
+		if (last == ' ' && *str != ' ')
+		{
+			count++;
+		}
+		last = *str;
+		str++;
+	}
+	return count;
+}
+
 /**
  * strtow - splits a string into words
  * @str: string
@@ -10,46 +35,67 @@
 
 char **strtow(char *str)
 {
-	int i, j, chars, rows, m = 0;
-	char **arr;
-
-	if (str == NULL)
+	int k, j, i;
+	char **words;
+	char *start;
+	char *word;
+	int word_count;
+	int word_length;
+	
+	if (str == NULL || *str == '\0')
 	{
-		return (0);
+        	return NULL;
 	}
-	else
+	
+	word_count = get_word_count(str);
+	words = (char **) malloc(sizeof(char *) * (word_count + 1));
+	if (words == NULL)
 	{
-		for (i = 0; str[i] != '\0' && str[i] != ' '; i++)
+		return NULL;
+	}
+	
+	i = 0;
+	while (*str != '\0') {
+		if (*str == ' ')
 		{
-			if (str[i + 1] == ' ')
-				rows++;
+			str++;
+			continue;
 		}
-		rows++;
-	}
-
-	arr = malloc(sizeof(char *) * (rows));
-	if (arr == NULL)
-		return (NULL);
-	chars = 0;
-	for (i = 0; str[i] != '\0' && str[i] != ' '; i++)
-	{
-		chars++;
-		if (str[i + 1] == ' ')
+		
+		start = str;
+		while (*str != ' ' && *str != '\0')
 		{
-			arr[m] = malloc(sizeof(char) * chars);
-			chars = 0;
-			m++;
+			str++;
 		}
-
-	}
-	for (i = 0; i < rows; i++)
-	{
-		for (j = 0; str[j] != '\0' && str[j] != ' '; j++)
-		{		
-			arr[i][j] = str[j];
-			if (str[i + 1] == ' ')
-				break;
+		
+		word_length = str - start;
+		if (word_length > MAX_WORD_LENGTH)
+		{
+			for (j = 0; j < i; j++)
+			{
+				free(words[j]);
+			}
+			free(words);
+			return (0);
 		}
+		
+		word = (char *) malloc(sizeof(char) * (word_length + 1));
+		if (word == NULL){
+			for (j = 0; j < i; j++)
+			{
+				free(words[j]);
+			}
+			free(words);
+			return NULL;
+		}
+		for (k = 0; k < word_length; k++)
+		{
+			word[k] = start[k];
+		}
+		word[word_length] = '\0';
+		words[i] = word;
+		i++;
 	}
-	return (arr);
+	words[i] = NULL;
+	return words;
 }
