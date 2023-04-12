@@ -10,10 +10,10 @@
 
 char **strtow(char *str)
 {
-	int i, j, chars, rows;
+	int i, j, chars, rows, m = 0;
 	char **arr;
 
-	if (str == NULL || str == '')
+	if (str == NULL)
 	{
 		return (0);
 	}
@@ -21,22 +21,33 @@ char **strtow(char *str)
 	{
 		for (i = 0; str[i] != '\0' && str[i] != ' '; i++)
 		{
-			chars++;
 			if (str[i + 1] == ' ')
 				rows++;
 		}
+		rows++;
 	}
 
-	arr = malloc(sizeof(char *) * (rows + 1));
+	arr = malloc(sizeof(char *) * (rows));
 	if (arr == NULL)
 		return (NULL);
-	for (i = 0; i < chars; i++)
+	chars = 0;
+	for (i = 0; str[i] != '\0' && str[i] != ' '; i++)
 	{
-		for (j = 0; j < rows; j++)
+		chars++;
+		if (str[i + 1] == ' ')
 		{
-			if (str[i] != ' ')
-				arr[i][j] = str[i];
-			else
+			arr[m] = malloc(sizeof(char) * chars);
+			chars = 0;
+			m++;
+		}
+
+	}
+	for (i = 0; i < rows; i++)
+	{
+		for (j = 0; str[j] != '\0' && str[j] != ' '; j++)
+		{		
+			arr[i][j] = str[j];
+			if (str[i + 1] == ' ')
 				break;
 		}
 	}
