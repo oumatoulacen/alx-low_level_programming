@@ -13,7 +13,7 @@ char **strtow(char *str)
 	int i, j, chars, rows;
 	char **arr;
 
-	if (str == NULL || str == "")
+	if (str == NULL || str == '')
 	{
 		return (0);
 	}
@@ -40,5 +40,5 @@ char **strtow(char *str)
 				break;
 		}
 	}
-
+	return (arr);
 }
