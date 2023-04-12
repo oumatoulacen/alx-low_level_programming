@@ -38,7 +38,7 @@ char **strtow(char *str)
 	char *start, *word;
 	int k, j, i = 0, word_count, word_length;
 
-	if (str == NULL || *str == '\0' || (*str == ' ' && *(str + 1) == '\0'))
+	if (str == NULL || *str == '\0' || (*str == " " && *(str + 1) == '\0'))
 		return (0);
 	word_count = get_word_count(str);
 	words = (char **) malloc(sizeof(char *) * (word_count + 1));
