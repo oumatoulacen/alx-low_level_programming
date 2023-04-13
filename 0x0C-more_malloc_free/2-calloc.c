@@ -10,13 +10,19 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	unsigned int i;
 	void *ptr;
+	unsigned char *dup;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 	ptr = malloc(size * nmemb);
 	if (ptr == NULL)
 		return (NULL);
+
+	dup = ptr;
+	for (i = 0; i < nmemb; i++)
+		*dup++ = 0;
 	return (ptr);
 }
 
