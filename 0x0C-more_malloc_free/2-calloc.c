@@ -12,7 +12,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
 	void *ptr;
-	char *dup;
+	unsigned char *dup;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -21,7 +21,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	dup = ptr;
-	for (i = 0; i < nmemb; i++)
+	for (i = 0; i <= nmemb; i++)
 		dup[i] = 0;
 	return (ptr);
 }
