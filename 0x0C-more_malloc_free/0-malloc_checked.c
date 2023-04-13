@@ -6,11 +6,11 @@
 
 /**
  * malloc_checked - allocates memory using malloc
- *@b: size 
+ *@b: size
  *Return: void
  */
 
- void *malloc_checked(unsigned int b)
+void *malloc_checked(unsigned int b)
 {
 	void *ptr = malloc(b);
 
