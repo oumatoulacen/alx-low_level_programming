@@ -2,34 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_DIGITS 1000000
-void _puts(char *str);
 /**
  * print_error - if error occurs
  * Return: void
  */
 void print_error(void)
 {
-	_puts("Error");
-	_putchar('\n');
+	printf("Error\n");
 	exit(98);
 }
-/**
- * _puts - prints a string
- * @str: ptr
- * Return: void
- */
 
-void _puts(char *str)
-{
-	int i = 0;
-
-	while (str[i])
-	{
-		_putchar(str[i]);
-		i++;
-	}
-}
 /**
  * _strlen - returns the length of a string.
  * @s :pts
@@ -62,23 +44,7 @@ int _isdigit(char *s)
 	return (1);
 }
 
-/**
- * read_number - read number
- * @str: string
- * @num: num in str
- * Return: void
- */
-void read_number(char *str, int *num)
-{
-	int len = _strlen(str), i;
 
-	if (!_isdigit(str))
-		print_error();
-	for (i = 0; i < len; i++)
-	{
-		num[len - i - 1] = str[i] - '0';
-	}
-}
 /**
  * multiply - mul
  * @num1: number1
@@ -133,27 +99,44 @@ void print_result(int *result, int result_len)
 
 int main(int argc, char *argv[])
 {
-	int num1[MAX_DIGITS] = {0};
-	int num2[MAX_DIGITS] = {0};
-	int result[MAX_DIGITS * 2] = {0};
-	int result_len, num1_len, num2_len;
+	char *str1, *str2;
+	int num1, num2, *res, len, len1, len2, m = 0, i, carry;
 
-	if (argc != 3)
+	str1 = argv[1], str2 = argv[2];
+	if (argc != 3 || !_isdigit(str1) || !_isdigit(str2))
 		print_error();
-	read_number(argv[1], num1);
-	read_number(argv[2], num2);
-	num1_len = _strlen(argv[1]);
-	num2_len = _strlen(argv[2]);
-	if (num1_len > MAX_DIGITS || num2_len > MAX_DIGITS)
+	len1 = _strlen(str1);
+	len2 = _strlen(str2);
+	len = len1 + len2 + 1;
+	res = malloc(sizeof(int) * len);
+	if (!res)
+		return (0);
+	for (i = 0; i <= len1 + len2; i++)
+		res[i] = 0;
+	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
-		print_error();
+		num1 = str1[len1] - '0';
+		carry = 0;
+		for (len2 = len2 - 1; len2 >= 0; len2--)
+		{
+			num2 = str2[len2] - '0';
+			carry += res[len1 + len2 + 1] + (num1 * num2);
+			res[len1 + len2 + 1] = carry % 10;
+			carry /= 10;
+		}
+		if (carry > 0)
+			res[len1 + len2 + 1] += carry;
 	}
-	multiply(num1, num1_len, num2, num2_len, result);
-	result_len = num1_len + num2_len - 1;
-	while (result_len > 0 && result[result_len] == 0)
+	for (i = 0; i < len - 1; i++)
 	{
-		result_len--;
+		if (res[i])
+			m = 1;
+		if (m)
+			_putchar(res[i] + '0');
 	}
-	print_result(result, result_len);
+	if (!m)
+		_putchar('0');
+	_putchar('\n');
+	free(res);
 	return (0);
 }
