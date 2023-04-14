@@ -11,7 +11,7 @@ void _puts(char *str);
  * print_error - if error occurs
  * Return: void
  */
-void print_error()
+void print_error(void)
 {
 	_puts("Error");
 	_putchar('\0');
@@ -56,7 +56,7 @@ int _strlen(char *s)
 void read_number(char *str, int *num)
 {
 	int len = _strlen(str), i;
-	
+
 	for (i = 0; i < len; i++)
 	{
 		if (!isdigit(str[i]))
@@ -74,20 +74,20 @@ void read_number(char *str, int *num)
  * Return: void
  */
 
-void multiply_numbers(int *num1, int num1_len, int *num2, int num2_len, int *result)
+void multiply(int *num1, int num1_len, int *num2, int num2_len, int *result)
 {
 	int carry, i, j, product;
-	
+
 	for (i = 0; i < num2_len; i++)
 	{
 		carry = 0;
 		for (j = 0; j < num1_len; j++)
 		{
-			product = num1[j] * num2[i] + carry + result[i+j];
-			result[i+j] = product % 10;
+			product = num1[j] * num2[i] + carry + result[i + j];
+			result[i + j] = product % 10;
 			carry = product / 10;
 		}
-		result[i+num1_len] = carry;
+		result[i + num1_len] = carry;
 	}
 }
 /**
@@ -124,26 +124,21 @@ int main(int argc, char *argv[])
 	int result_len, num1_len, num2_len;
 
 	if (argc != 3)
-	{
 		print_error();
-	}
 	read_number(argv[1], num1);
 	read_number(argv[2], num2);
-	
 	num1_len = strlen(argv[1]);
 	num2_len = strlen(argv[2]);
-	
 	if (num1_len > MAX_DIGITS || num2_len > MAX_DIGITS)
 	{
 		print_error();
 	}
-	
-	multiply_numbers(num1, num1_len, num2, num2_len, result);
+	multiply(num1, num1_len, num2, num2_len, result);
 	result_len = num1_len + num2_len - 1;
 	while (result_len > 0 && result[result_len] == 0)
 	{
 		result_len--;
 	}
 	print_result(result, result_len);
-	return 0;
+	return (0);
 }
