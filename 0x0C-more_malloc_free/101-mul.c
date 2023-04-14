@@ -14,7 +14,7 @@ void _puts(char *str);
 void print_error(void)
 {
 	_puts("Error");
-	_putchar('\0');
+	_putchar('\n');
 	exit(98);
 }
 /**
