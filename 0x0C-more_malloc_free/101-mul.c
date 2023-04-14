@@ -1,11 +1,8 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
 
-#define MAX_DIGITS 10000
-
+#define MAX_DIGITS 1000000
 void _puts(char *str);
 /**
  * print_error - if error occurs
@@ -48,6 +45,24 @@ int _strlen(char *s)
 }
 
 /**
+ * _isdigit - checks if is gigit
+ * @s: string
+ * Return: 0 if a non-digit is found, 1 otherwise
+ */
+int _isdigit(char *s)
+{
+	int i = 0;
+
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+	i++;
+	}
+	return (1);
+}
+
+/**
  * read_number - read number
  * @str: string
  * @num: num in str
@@ -57,15 +72,15 @@ void read_number(char *str, int *num)
 {
 	int len = _strlen(str), i;
 
+	if (!_isdigit(str))
+		print_error();
 	for (i = 0; i < len; i++)
 	{
-		if (!isdigit(str[i]))
-			print_error();
 		num[len - i - 1] = str[i] - '0';
 	}
 }
 /**
- * multiply_numbers - mul
+ * multiply - mul
  * @num1: number1
  * @num2: number2
  * @num2_len: length of num2
@@ -127,8 +142,8 @@ int main(int argc, char *argv[])
 		print_error();
 	read_number(argv[1], num1);
 	read_number(argv[2], num2);
-	num1_len = strlen(argv[1]);
-	num2_len = strlen(argv[2]);
+	num1_len = _strlen(argv[1]);
+	num2_len = _strlen(argv[2]);
 	if (num1_len > MAX_DIGITS || num2_len > MAX_DIGITS)
 	{
 		print_error();
