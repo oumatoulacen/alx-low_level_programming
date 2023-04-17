@@ -50,8 +50,8 @@ int _strlen(char *s)
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	(*d).name = malloc(_strlen(name));
-	(*d).owner = malloc(_strlen(owner));
+	(*d).name = malloc(_strlen(name) + 1);
+	(*d).owner = malloc(_strlen(owner) + 1);
 
 	_strcpy((*d).name, name);
 	_strcpy((*d).owner, owner);
