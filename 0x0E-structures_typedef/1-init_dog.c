@@ -1,43 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
-/**
- * _strcpy - copies the string
- * @dest: ptr
- * @src: ptr too
- * Return: the pointer to dest
- */
-
-char *_strcpy(char *dest, char *src)
-{
-	int i, j;
-
-	i = 0;
-	while (src[i])
-		i++;
-
-	for (j = 0; j <= i; j++)
-	{
-		dest[j] = src[j];
-	}
-
-	return (dest);
-}
-/**
- * _strlen - returns the length of a string.
- * @s :pts
- * Return: length of a string
- */
-
-int _strlen(char *s)
-{
-	int lng = 0;
-
-	while (s[lng])
-	{
-		lng++;
-	}
-	return (lng);
-}
+#include <stdio.h>
 
 /**
  * init_dog - initialize variable d
@@ -50,10 +13,9 @@ int _strlen(char *s)
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	(*d).name = malloc(_strlen(name) + 1);
-	(*d).owner = malloc(_strlen(owner) + 1);
-
-	_strcpy((*d).name, name);
-	_strcpy((*d).owner, owner);
+	if (d != NULL)
+		d = malloc(sizeof(struct dog));
+	(*d).name = name;
 	(*d).age = age;
+	(*d).owner = owner;
 }
