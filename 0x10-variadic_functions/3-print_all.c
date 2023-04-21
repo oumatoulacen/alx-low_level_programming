@@ -24,7 +24,7 @@ void print_all(const char * const format, ...)
 		switch (*ptr)
 		{
 			case 's':
-				s = va_arg(args, char*);
+				s = va_arg(args, char *);
 				if (s == NULL)
 					s = "(nil)";
 				printf("%s", s);
@@ -34,7 +34,7 @@ void print_all(const char * const format, ...)
 				printf("%d", i);
 				break;
 			case 'f':
-				f = va_arg(args, double);
+				f = va_arg(args, float);
 				printf("%f", f);
 				break;
 			case 'c':
