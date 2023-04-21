@@ -15,11 +15,10 @@ void print_all(const char * const format, ...)
 	int i;
 	float f;
 	char c;
-	char const *ptr;
+	char const *ptr, *str;
 
-	ptr = format;
+	ptr = str = format;
 	va_start(args, format);
-
 	while (*ptr != '\0')
 	{
 		switch (*ptr)
@@ -27,9 +26,8 @@ void print_all(const char * const format, ...)
 			case 's':
 				s = va_arg(args, char*);
 				if (s == NULL)
-					printf("(nil)");
-				else
-					printf("%s", s);
+					s = "(nil)";
+				printf("%s", s);
 				break;
 			case 'i':
 				i = va_arg(args, int);
@@ -44,10 +42,12 @@ void print_all(const char * const format, ...)
 				printf("%c", c);
 				break;
 		}
-		if ((*ptr == 's' || *ptr == 'i' || *ptr == 'f' || *ptr == 'c')
-				&& (*(++ptr) != '\0'))
+		ptr++;
+		if (*ptr != '\0'
+			&& (*str == 's' || *str == 'i' || *str == 'c' || *str == 'f'))
 			printf(", ");
-		else
-			ptr++;
-	}, printf("\n"), va_end(args);
+		str++;
+	}
+	printf("\n");
+	va_end(args);
 }
