@@ -15,11 +15,9 @@ void print_all(const char * const format, ...)
 	int i;
 	float f;
 	char c;
-	char const *ptr, *prv, *str;
+	char const *ptr, *prv;
 
-	ptr = prv = str = format, va_start(args, format);
-	while(str != NULL)
-	{
+	ptr = prv = format, va_start(args, format);
 	while (*ptr != '\0')
 	{
 		switch (*ptr)
@@ -49,6 +47,4 @@ void print_all(const char * const format, ...)
 		prv++;
 	}
 	printf("\n"), va_end(args);
-	str++;
-	}
 }
