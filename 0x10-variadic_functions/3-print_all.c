@@ -12,10 +12,10 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	char *s;
-	int i;
+	int i, printed_args = 0;
 	float f;
 	char c;
-	char const *ptr, *str;
+	char const *ptr;
 
 	ptr = str = format;
 	va_start(args, format);
@@ -28,25 +28,27 @@ void print_all(const char * const format, ...)
 				if (s == NULL)
 					s = "(nil)";
 				printf("%s", s);
+				printed_args++;
 				break;
 			case 'i':
 				i = va_arg(args, int);
 				printf("%d", i);
+				printed_args;
 				break;
 			case 'f':
 				f = va_arg(args, double);
 				printf("%f", f);
+				printed_args++;
 				break;
 			case 'c':
 				c = va_arg(args, int);
 				printf("%c", c);
+				printed_args;
 				break;
 		}
 		ptr++;
-		if (*ptr != '\0'
-			&& (*str == 's' || *str == 'i' || *str == 'c' || *str == 'f'))
+		if (*ptr != '\0' && printed_args > 0)
 			printf(", ");
-		str++;
 	}
 	printf("\n");
 	va_end(args);
