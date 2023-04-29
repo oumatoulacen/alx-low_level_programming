@@ -14,11 +14,9 @@ int pop_listint(listint_t **head)
 	listint_t *first;
 	int n;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
 		return (0);
 	first = (*head)->next;
-	if (first == NULL)
-		return (0);
 	n = (*head)->n;
 	free(*head);
 	*head = first;
