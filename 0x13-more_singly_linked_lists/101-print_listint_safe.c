@@ -23,7 +23,7 @@ size_t print_listint_safe(const listint_t *head)
 		next = current->next;
 		printf("[%p] %d\n", (void *)current, current->n);
 		count++;
-		if (next >= current)
+		if (next > current)
 		{
 			printf("-> [%p] %d\n", (void *)next, next->n);
 			break;
