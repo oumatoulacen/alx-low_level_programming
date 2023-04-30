@@ -11,7 +11,7 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t count = 0;
+	size_t i, count = 0;
 	const listint_t *current, *next;
 	const listint_t *printed_nodes[1024] = {NULL};
 
