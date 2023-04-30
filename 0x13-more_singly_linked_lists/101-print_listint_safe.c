@@ -31,7 +31,7 @@ size_t print_listint_safe(const listint_t *head)
 			if (next == printed_nodes[i])
 			{
 				printf("-> [%p] %d\n", (void *)next, next->n);
-				return (count);
+				exit(98);
 			}
 		}
 		current = next;
