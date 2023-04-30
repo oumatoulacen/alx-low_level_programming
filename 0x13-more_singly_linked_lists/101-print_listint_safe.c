@@ -25,7 +25,7 @@ size_t print_listint_safe(const listint_t *head)
 		printed_nodes[count] = current;
 		count++;
 		next = current->next;
-		for (i = 0; i < count; i++)
+		for (i = 0; i < count && next; i++)
 		{
 			if (next == printed_nodes[i])
 			{
