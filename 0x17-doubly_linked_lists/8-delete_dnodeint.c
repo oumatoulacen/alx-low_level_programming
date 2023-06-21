@@ -5,7 +5,7 @@
  * delete_dnodeint_at_index - delete node at give index
  * @head:list
  * @index:given index
- * Return: -1 or 0
+ * Return: 1 if it succeeded, -1 if it failed
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
