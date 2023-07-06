@@ -10,12 +10,18 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *table;
+	hash_node_t **arr;
 
 	table = malloc(sizeof(hash_table_t));
 	if (!table)
 		return (0);
+	arr = malloc(sizeof(hash_node_t) * size);
+	if (!arr)
+	{
+		free(table);
+		return (0);
+	}
 	table->size = size;
-	table->array = NULL;
-
+	table->array = arr;
 	return (table);
 }
