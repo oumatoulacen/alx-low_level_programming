@@ -14,14 +14,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *node, *tmp;
 
-	index = key_index(key, ht->size);
+	index = key_index((const unsigned char *)key, ht->size);
 	if (strlen(key) == 0)
 		return (0);
 	node = malloc(sizeof(hash_node_t));
 	if (!node)
 		return (0);
-	node->key = key;
-	node->value = value;
+	node->key = (char *)key;
+	node->value = (char *)value;
 	node->next = NULL;
 	if (ht->array[index] == NULL)
 	{
