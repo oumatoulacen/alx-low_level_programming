@@ -1,6 +1,32 @@
 #include "hash_tables.h"
 
 /**
+ * create_node - create a linked nodes
+ * @key: the key
+ * @value: the value from the key
+ * Return: The new node pointer
+ */
+hash_node_t *create_node(const char *key, const char *value)
+{
+	hash_node_t *node;
+
+	node = malloc(sizeof(hash_table_t *));
+	if (node == NULL)
+		return (NULL);
+	node->key = strdup(key);
+	if (node->key == NULL)
+		return (NULL);
+	node->value = strdup(value);
+	if (node->value == NULL)
+	{
+		free(node->key);
+		free(node);
+		return (NULL);
+	}
+	return (node);
+}
+
+/**
  * hash_table_set - adds an element to the hash table.
  * @ht: the hash table you want to add or update the key/value to
  * @key: the key. key can not be an empty string
@@ -22,17 +48,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(tmp->key, key) == 0)
 		{
-			free(ht->array[index]);
-			ht->array[index]->value = strdup(value);
+			free(tmp);
+			tmp->value = strdup(value);
+			if (!tmp->value)
+				return (0);
 			return (1);
 		}
 		tmp = tmp->next;
 	}
-	node = malloc(sizeof(hash_node_t));
+	node = create_node(key, value);
 	if (!node)
 		return (0);
-	node->key = strdup(key);
-	node->value = strdup(value);
 	node->next = ht->array[index];
 	ht->array[index] = node;
 	return (1);
