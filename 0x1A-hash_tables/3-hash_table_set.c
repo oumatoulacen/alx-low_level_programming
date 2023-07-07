@@ -20,8 +20,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node = malloc(sizeof(hash_node_t));
 	if (!node)
 		return (0);
-	node->key = (char *)key;
-	node->value = (char *)value;
+	node->key = strdup(key);
+	if (node-key == NULL)
+	{
+		free(node);
+		return (0);
+	}
+	node->value = strdup(value);
+	if (node->value == NULL)
+	{
+		free(node-key);
+		free(node);
+		return (0);
+	}
 	tmp = ht->array[index];
 	while (tmp)
 	{
