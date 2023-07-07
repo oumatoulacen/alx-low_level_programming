@@ -40,6 +40,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free(ht->array[index]);
 			ht->array[index]->value = strdup(value);
+			if (!ht->array[index]->value)
+			{
+				free(node->key);
+				free(node->value);
+				free(node);
+			}
 			return (1);
 		}
 		tmp = tmp->next;
