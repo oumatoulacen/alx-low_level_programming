@@ -10,6 +10,7 @@ def island_perimeter(grid):
     1 represents a land zone
     One cell is a square with side length 1
     """
+
     width = len(grid[0])
     height = len(grid)
     edges = 0
